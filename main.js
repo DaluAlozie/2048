@@ -454,7 +454,6 @@ class Game{
     drawPieces(){
 
         for (const [pos, piece] of Object.entries(this.cellDict)) {
-
             if (piece) piece.draw();
             
             else{
@@ -497,7 +496,6 @@ class Game{
             if (left  && left.get_num()  == piece.get_num()) return false;
             if (right && right.get_num() == piece.get_num()) return false;
 
-            
         };
         return true;
     };
@@ -548,7 +546,7 @@ window.addEventListener("keydown",async (event)=>{
                 break;
         }
         if (anyPiecesMoved) {
-            game.createPiece(get_random([2,4,8,16,32,64,128,256,512]),game.getEmptyCell(),false)
+            game.createPiece(get_random([2,4]),game.getEmptyCell(),false)
         }
 
         keyLock = true;
